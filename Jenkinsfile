@@ -1,5 +1,23 @@
 pipeline {
     agent { docker { image 'node:8.0' } }
+    parameters {
+        string(
+                name: 'RELEASE_COMMIT',
+                defaultValue: 'none',
+                description: 'Example: c155280')
+        string(
+                name: 'RELEASE_FEATURE_BRANCH',
+                defaultValue: 'none',
+                description: 'Example: feature/1001')
+        string(
+                name: 'RELEASE_TAG',
+                defaultValue: 'none',
+                description: 'Example: v0.0.1')
+        string(
+                name: 'RELEASE_ENVS',
+                defaultValue: 'none',
+                description: 'Example: ALL')
+    }
     stages {
         stage('build') {
             steps {
