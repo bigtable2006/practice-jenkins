@@ -22,10 +22,10 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo "###################################################"'
-                sh 'echo ${params.RELEASE_COMMIT}'
-                sh 'echo ${params.RELEASE_FEATURE_BRANCH}'
-                sh 'echo ${params.RELEASE_TAG}'
-                sh 'echo ${params.RELEASE_ENVS}'
+                sh 'echo "${params.RELEASE_COMMIT}"'
+                sh 'echo "${params.RELEASE_FEATURE_BRANCH}"'
+                sh 'echo "${params.RELEASE_TAG}"'
+                sh 'echo "${params.RELEASE_ENVS}"'
                 sh 'echo "###################################################"'
             }
         }
